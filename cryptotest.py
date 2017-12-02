@@ -58,9 +58,7 @@ def decrypt(ciphertext, password):
 
 
 SHARED_SECRET = "correct horse battery staple"
-
 plaintext = "If You're Typing the Letters A-E-S Into Your Code You're Doing It Wrong"
-
 ciphertext = encrypt(plaintext, SHARED_SECRET)
 
 print "Ciphertext:", ciphertext
