@@ -29,7 +29,7 @@ def encrypt(plaintext, password):
     with hex encoded HMAC-SHA-512 hash appended."""
 
     key = gen_key(password)
-    iv = quantumrandom.hex()[:32].decode("hex")
+    iv = quantumrandom.binary()[:16]
     cipher = AES.new(key, AES.MODE_CFB, iv)
     data = iv.encode("hex") + cipher.encrypt(plaintext).encode("hex")
     sig = hmac.new(HMAC_KEY, data, hashlib.sha512).digest().encode("hex")
